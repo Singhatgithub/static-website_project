@@ -9,6 +9,22 @@ This Terraform configuration deploys a secure, scalable static website on AWS us
 - **Origin Access Control**: Secure access from CloudFront to S3 without public bucket policies
 - **Terraform Backend**: Remote state management using S3.
 
+## File Structure
+
+
+static-website-project/
+├── README.md                     
+└── static-website/
+      ├── main.tf                 # Main Terraform configuration (S3, CloudFront, etc.)
+      ├── variables.tf            # Variable definitions
+      ├── terraform.tfvars        # Variable values (customize here)
+      ├── outputs.tf              # Output definitions
+      ├── tfbekend.tf             # Backend configuration for remote state
+└── s3/                           # Code to create S3 backend bucket ()
+      ├── main.tf
+      ├── provider.tf
+      └── variable.tf
+
 ## Prerequisites
 
 - [Terraform](https://www.terraform.io/downloads.html) >= 1.0
@@ -114,3 +130,4 @@ terraform destroy
 ## Contributing
 
 Update variables, add resources, or modify configurations as needed. Run `terraform validate` and `terraform plan` before applying changes.
+
